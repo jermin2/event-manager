@@ -1,5 +1,8 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
 import Poll from 'mdi-material-ui/Poll'
@@ -24,8 +27,16 @@ import SalesByCountries from 'src/views/dashboard/SalesByCountries'
 
 const Dashboard = () => {
   return (
-    <ApexChartWrapper>
-      <Grid container spacing={6}>
+    <>
+      <AppBar position="static" color="primary" elevation={1}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Event Manager Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <ApexChartWrapper>
+        <Grid container spacing={6}>
         <Grid item xs={12} md={4}>
           <Trophy />
         </Grid>
@@ -94,7 +105,8 @@ const Dashboard = () => {
           <Table />
         </Grid>
       </Grid>
-    </ApexChartWrapper>
+      </ApexChartWrapper>
+    </>
   )
 }
 
